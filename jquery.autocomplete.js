@@ -433,6 +433,7 @@ $.Autocompleter = function(input, options) {
 };
 
 $.Autocompleter.defaults = {
+	appendTo: "body",
 	inputClass: "ac_input",
 	resultsClass: "ac_results",
 	loadingClass: "ac_loading",
@@ -622,7 +623,7 @@ $.Autocompleter.Select = function (options, input, select, config) {
 		.hide()
 		.addClass(options.resultsClass)
 		.css("position", "absolute")
-		.appendTo(document.body)
+		.appendTo(options.appendTo)
 		.hover(function(event) {
 		  // Browsers except FF do not fire mouseup event on scrollbars, resulting in mouseDownOnSelect remaining true, and results list not always hiding.
 		  if($(this).is(":visible")) {
